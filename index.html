@@ -210,10 +210,38 @@
       color:var(--muted);
       font-size:.94rem;
     }
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    .about-item{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .about-label{
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      color:var(--muted);
+    }
+    .about-value{
+      color:#e2e8f0;
+      font-size:.97rem;
+    }
+    .about-desc{
+      color:#94a3b8;
+      font-size:.96rem;
+      margin:0 0 16px;
+      line-height:1.7;
+    }
     @media (max-width:900px){
       .grid{grid-template-columns:1fr}
       h1{font-size:2.15rem}
       .hero{padding:36px 22px}
+      .about-grid{grid-template-columns:1fr}
     }
     @media (max-width:600px){
       .hero{flex-direction:column;align-items:flex-start;gap:20px}
@@ -226,6 +254,7 @@
     <nav class="nav">
       <div class="brand">Sawood Anwar</div>
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#interests">Interests</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
@@ -249,6 +278,60 @@
           <a class="btn" href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           <a class="btn" href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer">ORCID</a>
           <a class="btn" href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="about" style="margin-bottom:22px;">
+      <h2>About Me</h2>
+      <p class="about-desc">
+        I am an early career researcher working at the intersection of computational communication,
+        social media analysis, and natural language processing. My doctoral research examined
+        <strong style="color:#e2e8f0;">Facebook Reactions as emotional indicators</strong> of public engagement
+        with COVID-19 news on Indian media platforms, combining time-series analysis, embedding-based
+        topic modeling, GPT-4-assisted cluster labeling, and lexicon-based sentiment analysis
+        across 68,319 Facebook posts from four major English-language Indian news outlets.
+      </p>
+      <div class="about-grid">
+        <div class="about-item">
+          <span class="about-label">Degree</span>
+          <span class="about-value">Ph.D. in Humanities</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Curriculum</span>
+          <span class="about-value">Text and Communication Sciences</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Cycle</span>
+          <span class="about-value">XXXVII</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Academic Discipline</span>
+          <span class="about-value">GSPS-06/A</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Period</span>
+          <span class="about-value">01 Nov 2021 – 22 Sep 2025</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Department</span>
+          <span class="about-value">DISCUI — Communication Sciences, Humanities and International Studies</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Institution</span>
+          <span class="about-value">University of Urbino Carlo Bo, Italy</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Supervisor</span>
+          <span class="about-value">Prof. Fabio Giglietto</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Co-Supervisor</span>
+          <span class="about-value">Prof. Giovanni Boccia Artieri</span>
+        </div>
+        <div class="about-item">
+          <span class="about-label">Coordinator</span>
+          <span class="about-value">Prof. Liana Lomiento</span>
         </div>
       </div>
     </section>
