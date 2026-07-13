@@ -70,6 +70,25 @@
       background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(14,165,233,.05));
       box-shadow:0 18px 45px rgba(0,0,0,.22);
       margin-bottom:22px;
+      display:flex;
+      align-items:center;
+      gap:36px;
+      flex-wrap:wrap;
+    }
+    .hero-photo{
+      flex-shrink:0;
+    }
+    .hero-photo img{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      border:3px solid var(--accent);
+      box-shadow:0 0 24px rgba(56,189,248,.35);
+      display:block;
+    }
+    .hero-text{
+      flex:1;
+      min-width:240px;
     }
     .eyebrow{
       display:inline-block;
@@ -196,6 +215,10 @@
       h1{font-size:2.15rem}
       .hero{padding:36px 22px}
     }
+    @media (max-width:600px){
+      .hero{flex-direction:column;align-items:flex-start;gap:20px}
+      .hero-photo img{width:100px;height:100px}
+    }
   </style>
 </head>
 <body>
@@ -211,17 +234,22 @@
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Academic Portfolio</div>
-      <h1>Sawood Anwar</h1>
-      <p class="lead">
-        Computational social scientist and researcher focused on NLP, social media analysis,
-        computational communication, and digital methods.
-      </p>
-      <div class="buttons">
-        <a class="btn primary" href="https://github.com/sawoodanwar" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="btn" href="https://scholar.google.com/citations?hl=en&user=Z2kACpkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a class="btn" href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer">ORCID</a>
-        <a class="btn" href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="hero-photo">
+        <img src="https://github.com/sawoodanwar.png" alt="Sawood Anwar" />
+      </div>
+      <div class="hero-text">
+        <div class="eyebrow">Academic Portfolio</div>
+        <h1>Sawood Anwar</h1>
+        <p class="lead">
+          Computational social scientist and researcher focused on NLP, social media analysis,
+          computational communication, and digital methods.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="https://github.com/sawoodanwar" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a class="btn" href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
     </section>
 
@@ -295,7 +323,7 @@
       <h2>Selected Publications</h2>
       <ul class="list">
         <li>Anwar, S. (2024). Article in Frontiers in Sociology. <em>Frontiers in Sociology</em>, 9.</li>
-        <li>Anwar, S. (2025). “Facebook reactions” as emotional indicators: A multi-method approach to analyzing user engagement with COVID-19 news on Indian media platforms. [Doctoral dissertation, University of Urbino Carlo Bo]. University of Urbino IRIS Publication Repository.</li>
+        <li>Anwar, S. (2025). &#8220;Facebook reactions&#8221; as emotional indicators: A multi-method approach to analyzing user engagement with COVID-19 news on Indian media platforms. [Doctoral dissertation, University of Urbino Carlo Bo]. University of Urbino IRIS Publication Repository.</li>
       </ul>
     </section>
 
@@ -303,7 +331,7 @@
       <h2>Profiles</h2>
       <ul class="list">
         <li><a href="https://github.com/sawoodanwar" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?hl=en&user=Z2kACpkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
         <li><a href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer">ORCID</a></li>
         <li><a href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       </ul>
