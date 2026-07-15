@@ -333,6 +333,25 @@
     }
     .pub-list li em { color: var(--accent2); font-style: italic; }
     .pub-list li strong { color: #d0d8ec; font-weight: 500; }
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      padding: 4px 12px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--accent2);
+      font-size: .82rem;
+      font-weight: 500;
+      transition: border-color .2s, color .2s;
+    }
+    .pub-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
 
     .profiles-section { margin-bottom: 30px; }
     .profiles-grid {
@@ -522,13 +541,19 @@
       <div class="section-label"><span></span>Selected Publications</div>
       <ul class="pub-list">
         <li>
-          Anwar, S. (2024). [Article in <em>Frontiers in Sociology</em>]. <em>Frontiers in Sociology</em>, 9.
+          <strong>Anwar, S.</strong> (2024). Facebook reactions as emotional indicators: Analyzing public engagement
+          with COVID-19 pandemic news on Indian media platforms during the early lockdown phase.
+          <em>Frontiers in Sociology</em>, 9.
+          <br>
+          <a class="pub-link" href="https://www.frontiersin.org/journals/sociology/articles/10.3389/fsoc.2024.1379265/full" target="_blank" rel="noopener noreferrer">&#8599; View Article</a>
         </li>
         <li>
           <strong>Anwar, S.</strong> (2025). &ldquo;Facebook Reactions&rdquo; as emotional indicators: A multi-method approach
           to analyzing user engagement with COVID-19 news on Indian media platforms.
           [Doctoral dissertation, University of Urbino Carlo Bo].
           <em>University of Urbino IRIS Publication Repository</em>.
+          <br>
+          <a class="pub-link" href="https://ora.uniurb.it/handle/11576/2761691" target="_blank" rel="noopener noreferrer">&#8599; View Dissertation</a>
         </li>
       </ul>
     </section>
