@@ -71,8 +71,8 @@
       --text:     #dde3ee;
       --muted:    #8c9ab5;
       --heading:  #f0f4ff;
-      --accent:   #c9a96e;   /* warm gold — scholarly */
-      --accent2:  #7eafd4;   /* soft steel blue */
+      --accent:   #c9a96e;
+      --accent2:  #7eafd4;
       --tag-bg:   #1a2a45;
       --tag-text: #a8c4e0;
     }
@@ -92,7 +92,6 @@
     a { color: var(--accent2); text-decoration: none; }
     a:hover { color: var(--accent); text-decoration: underline; }
 
-    /* ── NAV ── */
     .nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -119,14 +118,12 @@
     }
     .nav-links a:hover { color: var(--accent); text-decoration: none; }
 
-    /* ── LAYOUT ── */
     .wrap {
       max-width: 1060px;
       margin: 0 auto;
       padding: 40px 24px 80px;
     }
 
-    /* ── HERO ── */
     .hero {
       display: flex;
       align-items: flex-start;
@@ -201,7 +198,6 @@
     }
     .btn.primary:hover { background: #e0bc84; border-color: #e0bc84; color: #1a1000; }
 
-    /* ── SECTION HEADERS ── */
     .section-label {
       font-family: 'EB Garamond', Georgia, serif;
       font-size: 1.35rem;
@@ -221,7 +217,6 @@
       margin-bottom: 3px;
     }
 
-    /* ── ABOUT ── */
     .about-block {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -238,7 +233,6 @@
     .about-block p:first-of-type { margin-top: 16px; }
     .about-block strong { color: #dde8f8; font-weight: 500; }
 
-    /* ── TWO-COL GRID ── */
     .grid2 {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -251,7 +245,7 @@
       border-radius: 6px;
       padding: 28px 30px;
     }
-    .panel h2 { /* section label inside panel */
+    .panel h2 {
       font-family: 'EB Garamond', Georgia, serif;
       font-size: 1.18rem;
       font-weight: 500;
@@ -261,7 +255,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* ── TAGS ── */
     .tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
       padding: 5px 12px;
@@ -273,7 +266,6 @@
       letter-spacing: .01em;
     }
 
-    /* ── TOOL LIST ── */
     .tool-list { list-style: none; }
     .tool-list li {
       padding: 9px 0;
@@ -285,7 +277,6 @@
     .tool-list li:last-child { border-bottom: none; }
     .tool-list strong { color: var(--accent); font-weight: 500; }
 
-    /* ── PROJECTS ── */
     .projects-section { margin-bottom: 30px; }
     .projects-grid {
       display: grid;
@@ -328,7 +319,6 @@
       line-height: 1.6;
     }
 
-    /* ── PUBLICATIONS ── */
     .pub-section { margin-bottom: 30px; }
     .pub-list { list-style: none; margin-top: 18px; }
     .pub-list li {
@@ -345,7 +335,6 @@
     .pub-list li em { color: var(--accent2); font-style: italic; }
     .pub-list li strong { color: #d0d8ec; font-weight: 500; }
 
-    /* ── PROFILES ── */
     .profiles-section { margin-bottom: 30px; }
     .profiles-grid {
       display: flex;
@@ -373,7 +362,6 @@
       text-decoration: none;
     }
 
-    /* ── FOOTER ── */
     footer {
       margin-top: 60px;
       padding: 24px 0 10px;
@@ -385,7 +373,6 @@
     footer a { color: var(--muted); }
     footer a:hover { color: var(--accent); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .grid2 { grid-template-columns: 1fr; }
       h1 { font-size: 2.1rem; }
@@ -402,7 +389,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <div class="brand">Sawood Anwar, PhD</div>
     <div class="nav-links">
@@ -416,7 +402,6 @@
 
   <div class="wrap">
 
-    <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-photo">
         <img src="https://github.com/sawoodanwar.png" alt="Sawood Anwar, PhD" />
@@ -439,7 +424,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="about-block" id="about">
       <div class="section-label"><span></span>About</div>
       <p>
@@ -461,7 +445,6 @@
       </p>
     </section>
 
-    <!-- RESEARCH INTERESTS + METHODS -->
     <section class="grid2" id="research">
       <div class="panel">
         <h2>Research Interests</h2>
@@ -492,7 +475,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="projects-section" id="projects">
       <div class="section-label"><span></span>Research Projects &amp; Code</div>
       <div class="projects-grid">
@@ -536,7 +518,6 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
     <section class="pub-section" id="publications">
       <div class="section-label"><span></span>Selected Publications</div>
       <ul class="pub-list">
@@ -552,7 +533,6 @@
       </ul>
     </section>
 
-    <!-- PROFILES -->
     <section class="profiles-section" id="profiles">
       <div class="section-label"><span></span>Academic Profiles</div>
       <div class="profiles-grid">
@@ -564,8 +544,7 @@
     </section>
 
     <footer>
-      <p>Sawood Anwar, PhD &nbsp;&middot;&nbsp; University of Urbino Carlo Bo &nbsp;&middot;&nbsp;
-      Milan, Italy &nbsp;&middot;&nbsp;
+      <p>Sawood Anwar, PhD &nbsp;&middot;&nbsp; Milan, Italy &nbsp;&middot;&nbsp;
       <a href="mailto:anwar1524@gmail.com">anwar1524@gmail.com</a></p>
       <p style="margin-top:6px;color:#4a5a78;">Last updated July 2026</p>
     </footer>
