@@ -580,6 +580,11 @@
           <span class="impact-num">1</span>
           <div class="impact-label">Doctoral Dissertation<br><em style="color:#3e5270;">University of Urbino, 2025</em></div>
         </div>
+        <!-- AUTO-UPDATED CITATION CARD -->
+        <div class="impact-card ca-data" id="citation-card">
+          <span class="impact-num" id="citation-count">&#8212;</span>
+          <div class="impact-label">Semantic Scholar Citations<br><em style="color:#3e5270;" id="citation-date">Auto-updated weekly</em></div>
+        </div>
         <div class="impact-card ca-data">
           <span class="impact-num">68K+</span>
           <div class="impact-label">Facebook Posts Analysed<br><em style="color:#3e5270;">Across 4 Indian news outlets</em></div>
@@ -601,7 +606,7 @@
           </a>
         </div>
       </div>
-      <p class="impact-note">Citation counts updated on Google Scholar. Last checked July 2026.</p>
+      <p class="impact-note" id="impact-note">Citation count via Semantic Scholar API &mdash; updated automatically every Monday.</p>
     </section>
 
     <!-- SERVICE -->
@@ -778,6 +783,7 @@
   </div>
 
   <script>
+    /* ── Scroll progress bar ── */
     (function(){
       var bar = document.getElementById('scroll-bar');
       function upd(){
@@ -787,6 +793,25 @@
       }
       window.addEventListener('scroll', upd, {passive:true});
       upd();
+    })();
+
+    /* ── Auto citation count from citations.json ── */
+    (function(){
+      var countEl = document.getElementById('citation-count');
+      var dateEl  = document.getElementById('citation-date');
+      fetch('citations.json?v=' + Date.now())
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var d = data.frontiers2024;
+          if(!d) return;
+          countEl.textContent = d.citationCount !== undefined ? d.citationCount : '—';
+          if(d.lastUpdated){
+            dateEl.textContent = 'Last updated ' + d.lastUpdated;
+          }
+        })
+        .catch(function(){
+          countEl.textContent = '—';
+        });
     })();
   </script>
 
