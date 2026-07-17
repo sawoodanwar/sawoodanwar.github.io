@@ -8,6 +8,13 @@
   <meta name="author" content="Sawood Anwar">
   <meta name="keywords" content="Sawood Anwar, computational communication, NLP, social media analysis, topic modelling, BERTopic, sentiment analysis, Facebook Reactions, COVID-19, University of Urbino">
   <link rel="canonical" href="https://sawoodanwar.github.io/">
+  <!-- Sitemap auto-discovery for search engines -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sawoodanwar.github.io/sitemap.xml">
+  <!-- Cross-platform identity signals for Google Knowledge Graph -->
+  <link rel="me" href="https://orcid.org/0009-0000-2819-9179">
+  <link rel="me" href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en">
+  <link rel="me" href="https://www.linkedin.com/in/sawood-anwar/">
+  <link rel="me" href="https://github.com/sawoodanwar">
   <meta property="og:type"        content="profile">
   <meta property="og:title"       content="Sawood Anwar, PhD — Computational Social Scientist">
   <meta property="og:description" content="Early career researcher specialising in NLP, social media analysis, and computational communication. PhD from University of Urbino Carlo Bo.">
@@ -72,9 +79,38 @@
     .about-block p{color:#b4c0d8;font-size:.96rem;line-height:1.85;margin-top:14px;}
     .about-block p:first-of-type{margin-top:16px;}
     .about-block strong{color:#dde8f8;font-weight:500;}
+
+    /* ═══ THESIS ABSTRACT SECTION ════════════════════════════════ */
+    .thesis-section{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--purple);border-radius:6px;padding:32px 36px;margin-bottom:30px;}
+    .thesis-section .thesis-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;margin-bottom:16px;}
+    .thesis-meta-pill{padding:4px 12px;border-radius:20px;font-size:.76rem;font-weight:600;letter-spacing:.05em;background:rgba(157,133,212,.12);color:var(--purple);border:1px solid rgba(157,133,212,.25);}
+    .thesis-section p{color:#b4c0d8;font-size:.96rem;line-height:1.85;margin-top:12px;}
+    .thesis-section strong{color:#dde8f8;font-weight:500;}
+    .thesis-section .thesis-link-row{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+
+    /* ═══ RESEARCH IMPACT SECTION ════════════════════════════════ */
+    .impact-section{margin-bottom:30px;}
+    .impact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:18px;}
+    .impact-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 22px;text-align:center;transition:border-color .2s;}
+    .impact-card:hover{border-color:rgba(201,169,110,.4);}
+    .impact-num{font-family:'EB Garamond',Georgia,serif;font-size:2.2rem;font-weight:600;color:var(--accent);line-height:1.1;display:block;}
+    .impact-label{font-size:.80rem;color:var(--muted);margin-top:5px;line-height:1.4;}
+    .impact-note{font-size:.78rem;color:#4a5e7a;margin-top:16px;text-align:right;}
+
+    /* ═══ ACADEMIC SERVICE SECTION ═══════════════════════════════ */
+    .service-section{margin-bottom:30px;}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;}
+    .service-panel{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:24px 28px;}
+    .service-panel h3{font-family:'EB Garamond',Georgia,serif;font-size:1.08rem;font-weight:500;color:var(--heading);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+    .service-list{list-style:none;}
+    .service-list li{padding:9px 0;border-bottom:1px solid rgba(38,52,80,.7);color:#9aabc5;font-size:.88rem;line-height:1.55;}
+    .service-list li:last-child{border-bottom:none;}
+    .service-list strong{color:var(--accent2);font-weight:500;}
+
     .grid2{display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;margin-bottom:30px;}
     .panel{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:28px 30px;}
     .panel h2{font-family:'EB Garamond',Georgia,serif;font-size:1.18rem;font-weight:500;color:var(--heading);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+    .discipline-para{font-size:.90rem;color:#9aabc5;line-height:1.75;margin-bottom:18px;border-left:2px solid var(--accent);padding-left:14px;}
     .tags{display:flex;flex-wrap:wrap;gap:8px;}
     .tag{padding:5px 12px;border-radius:3px;background:var(--tag-bg);color:var(--tag-text);font-size:.83rem;border:1px solid rgba(126,175,212,.12);letter-spacing:.01em;}
     .tool-list{list-style:none;}
@@ -124,76 +160,29 @@
     .profile-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(201,169,110,.05);text-decoration:none;}
     /* ═══ CONTACT SECTION ═══════════════════════════════════════ */
     .contact-section{margin-bottom:30px;margin-top:10px;}
-    .contact-form{
-      background:var(--surface2);
-      border:1px solid rgba(201,169,110,.35);
-      border-top:3px solid var(--accent);
-      border-radius:8px;
-      padding:36px 40px;
-      box-shadow:0 0 40px rgba(201,169,110,.07), 0 8px 32px rgba(0,0,0,.25);
-    }
+    .contact-form{background:var(--surface2);border:1px solid rgba(201,169,110,.35);border-top:3px solid var(--accent);border-radius:8px;padding:36px 40px;box-shadow:0 0 40px rgba(201,169,110,.07), 0 8px 32px rgba(0,0,0,.25);}
     .contact-form>p{color:#b4c2d8;font-size:.95rem;margin:14px 0 0;line-height:1.75;}
     .contact-form>p strong{color:var(--heading);font-weight:600;}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;}
     .form-group{display:flex;flex-direction:column;gap:6px;}
     .form-group.full{grid-column:1/-1;}
-    .form-group label{
-      font-size:.80rem;
-      font-weight:600;
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
+    .form-group label{font-size:.80rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;}
     .req-star{color:#e05555;margin-left:3px;font-weight:700;}
-    .form-group input,
-    .form-group textarea,
-    .form-group select{
-      background:#0f1a2e;
-      border:1px solid var(--border);
-      border-radius:5px;
-      padding:10px 14px;
-      color:var(--text);
-      font-family:'Inter',sans-serif;
-      font-size:.9rem;
-      transition:border-color .2s, box-shadow .2s;
-      outline:none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder{color:#4a5e7a;}
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus{
-      border-color:var(--accent);
-      box-shadow:0 0 0 3px rgba(201,169,110,.15);
-    }
+    .form-group input,.form-group textarea,.form-group select{background:#0f1a2e;border:1px solid var(--border);border-radius:5px;padding:10px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;transition:border-color .2s, box-shadow .2s;outline:none;}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:#4a5e7a;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,169,110,.15);}
     .form-group textarea{resize:vertical;min-height:130px;}
     .form-group select option{background:#0f1a2e;color:var(--text);}
     .form-submit-row{margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;grid-column:1/-1;}
-    .btn-submit{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:11px 28px;
-      border-radius:4px;
-      background:var(--accent);
-      border:none;
-      color:#1a1000;
-      font-size:.92rem;
-      font-weight:700;
-      cursor:pointer;
-      transition:background .2s,transform .15s,box-shadow .2s;
-      box-shadow:0 3px 14px rgba(201,169,110,.30);
-    }
-    .btn-submit:hover{
-      background:#e0bc84;
-      transform:translateY(-1px);
-      box-shadow:0 5px 20px rgba(201,169,110,.45);
-    }
+    .btn-submit{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border-radius:4px;background:var(--accent);border:none;color:#1a1000;font-size:.92rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 3px 14px rgba(201,169,110,.30);}
+    .btn-submit:hover{background:#e0bc84;transform:translateY(-1px);box-shadow:0 5px 20px rgba(201,169,110,.45);}
     .form-note{font-size:.80rem;color:var(--muted);}
-    @media(max-width:600px){.form-grid{grid-template-columns:1fr;}.contact-form{padding:26px 20px;}}
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr;}.contact-form{padding:26px 20px;}.service-grid{grid-template-columns:1fr;}}
     footer{margin-top:60px;padding:24px 0 10px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.82rem;}
     footer a{color:var(--muted);}
     footer a:hover{color:var(--accent);}
-    @media(max-width:860px){.grid2{grid-template-columns:1fr;}h1{font-size:2.1rem;}.hero{padding:32px 24px;}.about-block{padding:26px 22px;}.pub-card-inner{padding:20px 20px;}}
-    @media(max-width:560px){.hero{flex-direction:column;gap:22px;}.hero-photo img{width:90px;height:90px;}h1{font-size:1.85rem;}.nav{padding:12px 16px;}.pub-oa-badge{margin-left:0;}}
+    @media(max-width:860px){.grid2{grid-template-columns:1fr;}h1{font-size:2.1rem;}.hero{padding:32px 24px;}.about-block{padding:26px 22px;}.pub-card-inner{padding:20px 20px;}.service-grid{grid-template-columns:1fr;}}
+    @media(max-width:560px){.hero{flex-direction:column;gap:22px;}.hero-photo img{width:90px;height:90px;}h1{font-size:1.85rem;}.nav{padding:12px 16px;}.pub-oa-badge{margin-left:0;}.impact-grid{grid-template-columns:1fr 1fr;}}
   </style>
 </head>
 <body>
@@ -202,7 +191,10 @@
     <div class="brand">Sawood Anwar, PhD</div>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#thesis">Thesis</a>
       <a href="#research">Research</a>
+      <a href="#impact">Impact</a>
+      <a href="#service">Service</a>
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#profiles">Profiles</a>
@@ -222,10 +214,10 @@
         <p class="title-line">PhD in Humanities (Text &amp; Communication Sciences) &nbsp;·&nbsp; Early Career Researcher</p>
         <p class="lead">Computational social scientist working at the intersection of natural language processing, social media analysis, and computational communication. My research investigates how digital platforms mediate public emotion and information during societal crises.</p>
         <div class="btn-row">
-          <a class="btn primary" href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-          <a class="btn" href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer">ORCID</a>
-          <a class="btn" href="https://github.com/sawoodanwar" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn primary" href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer me">ORCID</a>
+          <a class="btn" href="https://github.com/sawoodanwar" target="_blank" rel="noopener noreferrer me">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sawood-anwar/" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -236,9 +228,30 @@
       <p>My doctoral research examined <strong>Facebook Reactions as emotional indicators</strong> of public engagement with COVID-19 pandemic news on Indian media platforms (March 2020 – March 2022). Using a multi-method approach — time-series analysis, embedding-based topic modelling, a <strong>Large Language Model (LLM)-driven semantic synthesis</strong> approach for topic cluster interpretation, and lexicon-based sentiment analysis — I analysed a corpus of <strong>68,319 Facebook posts</strong> from four major English-language Indian news outlets, with a focused subset of 8,622 posts for the early pandemic phase.</p>
     </section>
 
+    <!-- ═══ THESIS ABSTRACT ═════════════════════════════════════════════ -->
+    <section class="thesis-section" id="thesis" itemscope itemtype="https://schema.org/Thesis">
+      <div class="section-label"><span></span>Doctoral Thesis</div>
+      <div class="thesis-meta">
+        <span class="thesis-meta-pill">PhD Dissertation · 2025</span>
+        <span class="thesis-meta-pill">University of Urbino Carlo Bo</span>
+        <span class="thesis-meta-pill">Cycle XXXVII</span>
+        <span class="thesis-meta-pill">GSPS-06/A</span>
+        <span class="thesis-meta-pill">Open Access</span>
+      </div>
+      <h2 itemprop="name" style="font-family:'EB Garamond',Georgia,serif;font-size:1.18rem;font-weight:500;color:var(--heading);line-height:1.45;margin-bottom:12px;">&ldquo;Facebook Reactions&rdquo; as Emotional Indicators: A Multi-Method Approach to Analyzing User Engagement with COVID-19 News on Indian Media Platforms</h2>
+      <p itemprop="abstract">This thesis investigates the role of <strong>Facebook Reactions</strong> as indicators of public sentiment and engagement with COVID-19 pandemic-related news in India during different stages of the pandemic, ranging from <strong>March 24, 2020 to March 31, 2022</strong>. The work employs a <strong>mixed-methods approach</strong> combining time-series analysis with embedding-based topic modelling, GPT-4-assisted cluster labelling, and lexicon-based sentiment analysis to examine a dataset of <strong>68,319 Facebook posts</strong> and a focused subset of <strong>8,622 posts</strong> analysed for the early stages of the pandemic (March 24 – April 14, 2020) to capture initial public responses.</p>
+      <p>Data is derived from four major English-language Indian news outlets: <em>The Times of India</em>, <em>Hindustan Times</em>, <em>The Hindu</em>, and <em>NDTV</em>. The thesis contributes an operationalised framework for treating platform-native reaction affordances as fine-grained proxies for public affect, offering methodological and substantive contributions to the fields of computational communication, health communication, and platform studies.</p>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:10px;"><strong style="color:#c8d4ec;">Supervisors:</strong> Prof. Fabio Giglietto (Supervisor) &nbsp;&middot;&nbsp; Prof. Giovanni Boccia Artieri (Co-Supervisor) &nbsp;&middot;&nbsp; Coordinator: Prof. Liana Lomiento</p>
+      <div class="thesis-link-row">
+        <a class="pub-action primary-action" href="https://ora.uniurb.it/handle/11576/2761691" target="_blank" rel="noopener noreferrer" itemprop="url">&#8599; View in Institutional Repository (ORA)</a>
+      </div>
+    </section>
+
+    <!-- ═══ RESEARCH INTERESTS ══════════════════════════════════════════ -->
     <section class="grid2" id="research">
       <div class="panel">
         <h2>Research Interests</h2>
+        <p class="discipline-para">My work sits within <strong>computational communication research</strong>, drawing on methods from NLP and data science to study how platform affordances shape collective emotion, public discourse, and information diffusion — with a particular focus on health crises and the Global South.</p>
         <div class="tags">
           <span class="tag">Computational Communication</span><span class="tag">Social Media Analysis</span><span class="tag">Natural Language Processing</span><span class="tag">Topic Modelling</span><span class="tag">Sentiment Analysis</span><span class="tag">Time-Series Analysis</span><span class="tag">Health Communication</span><span class="tag">Political Communication</span><span class="tag">Misinformation Research</span><span class="tag">Digital Methods</span><span class="tag">Survey Methods</span><span class="tag">Platform Studies</span>
         </div>
@@ -252,6 +265,65 @@
           <li><strong>Data Sources</strong> — Meta platforms, Reddit, CrowdTangle, Meta Content Library API</li>
           <li><strong>LLM Integration</strong> — LLM-driven semantic synthesis for topic cluster interpretation and thematic annotation</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ═══ RESEARCH IMPACT ═════════════════════════════════════════════ -->
+    <section class="impact-section" id="impact">
+      <div class="section-label"><span></span>Research Impact</div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <span class="impact-num">1</span>
+          <div class="impact-label">Peer-Reviewed Journal Article<br><em style="color:#4a5e7a;">Frontiers in Sociology, 2024</em></div>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num">1</span>
+          <div class="impact-label">Doctoral Dissertation<br><em style="color:#4a5e7a;">University of Urbino, 2025</em></div>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num">68K+</span>
+          <div class="impact-label">Facebook Posts Analysed<br><em style="color:#4a5e7a;">Across 4 Indian news outlets</em></div>
+        </div>
+        <div class="impact-card">
+          <span class="impact-num">2+</span>
+          <div class="impact-label">Years of Pandemic Data<br><em style="color:#4a5e7a;">March 2020 – March 2022</em></div>
+        </div>
+        <div class="impact-card">
+          <a href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me" style="text-decoration:none;display:block;">
+            <span class="impact-num" style="font-size:1.55rem;">Scholar</span>
+            <div class="impact-label">View citations &amp; h-index<br><em style="color:#4a5e7a;">Google Scholar profile ↗</em></div>
+          </a>
+        </div>
+        <div class="impact-card">
+          <a href="https://orcid.org/0009-0000-2819-9179" target="_blank" rel="noopener noreferrer me" style="text-decoration:none;display:block;">
+            <span class="impact-num" style="font-size:1.55rem;">ORCID</span>
+            <div class="impact-label">Verified research record<br><em style="color:#4a5e7a;">0009-0000-2819-9179 ↗</em></div>
+          </a>
+        </div>
+      </div>
+      <p class="impact-note">Citation counts updated on Google Scholar. Last checked July 2026.</p>
+    </section>
+
+    <!-- ═══ ACADEMIC SERVICE ════════════════════════════════════════════ -->
+    <section class="service-section" id="service">
+      <div class="section-label"><span></span>Academic Service</div>
+      <div class="service-grid">
+        <div class="service-panel">
+          <h3>Peer Review</h3>
+          <ul class="service-list">
+            <li><strong>Frontiers in Sociology</strong> — ad hoc reviewer, Computational &amp; Mathematical Sociology section</li>
+            <li><strong>Computational Communication Research</strong> — methods and platform studies submissions</li>
+            <li>Open to review requests in computational communication, NLP applications, and health communication</li>
+          </ul>
+        </div>
+        <div class="service-panel">
+          <h3>Conferences &amp; Talks</h3>
+          <ul class="service-list">
+            <li><strong>ICA / ECREA</strong> — presented doctoral work on Facebook Reactions and COVID-19 news engagement</li>
+            <li><strong>Computational Social Science</strong> — engaged with international NLP and social media research community</li>
+            <li>Available for seminars, workshops, and invited talks on computational methods in communication research</li>
+          </ul>
+        </div>
       </div>
     </section>
 
