@@ -18,7 +18,6 @@ jobs:
       - name: Fetch citation count from Semantic Scholar
         id: fetch
         run: |
-          # DOI for the Frontiers in Sociology paper
           DOI="10.3389/fsoc.2024.1379265"
 
           RESPONSE=$(curl -s --max-time 20 \
@@ -26,11 +25,7 @@ jobs:
 
           echo "API response: $RESPONSE"
 
-          COUNT=$(echo "$RESPONSE" | python3 -c "
-import sys, json
-data = json.load(sys.stdin)
-print(data.get('citationCount', 0))
-")
+          COUNT=$(echo "$RESPONSE" | python3 -c 'import sys, json; data = json.load(sys.stdin); print(data.get("citationCount", 0))')
 
           echo "citation_count=$COUNT" >> $GITHUB_OUTPUT
           echo "Fetched citation count: $COUNT"
@@ -39,16 +34,7 @@ print(data.get('citationCount', 0))
         run: |
           COUNT="${{ steps.fetch.outputs.citation_count }}"
           DATE=$(date -u +"%Y-%m-%d")
-          cat > citations.json << EOF
-          {
-            "frontiers2024": {
-              "doi": "10.3389/fsoc.2024.1379265",
-              "title": "Facebook Reactions as Emotional Indicators",
-              "citationCount": ${COUNT},
-              "lastUpdated": "${DATE}"
-            }
-          }
-          EOF
+          printf '{\n  "frontiers2024": {\n    "doi": "10.3389/fsoc.2024.1379265",\n    "title": "Facebook Reactions as Emotional Indicators",\n    "citationCount": %s,\n    "lastUpdated": "%s"\n  }\n}\n' "$COUNT" "$DATE" > citations.json
           cat citations.json
 
       - name: Commit and push if changed
@@ -56,9 +42,8 @@ print(data.get('citationCount', 0))
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add citations.json
-          # Only commit if there is actually a change
           if git diff --cached --quiet; then
-            echo "No change in citation count — skipping commit."
+            echo "No change in citation count - skipping commit."
           else
             git commit -m "chore: update citation count [skip ci]"
             git push
