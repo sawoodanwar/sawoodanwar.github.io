@@ -127,7 +127,9 @@
     .impact-card:hover{border-color:rgba(201,169,110,.35);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.22);}
     .impact-card.ca-pub{--card-accent:var(--accent);}
     .impact-card.ca-data{--card-accent:var(--accent2);}
+    .impact-card.ca-scholar{--card-accent:var(--green);}
     .impact-num{font-family:'EB Garamond',Georgia,serif;font-size:2.3rem;font-weight:600;color:var(--accent);line-height:1.05;display:block;}
+    .impact-num.scholar-num{color:var(--green);}
     .impact-label{font-size:.79rem;color:var(--muted);margin-top:6px;line-height:1.45;}
     .impact-note{font-size:.77rem;color:#3e5270;margin-top:16px;text-align:right;}
     /* Service */
@@ -346,6 +348,10 @@
           <span class="impact-num" id="citation-count-cr">&#8212;</span>
           <div class="impact-label">Crossref Citations<br><em style="color:#3e5270;" id="citation-date-cr">Auto-updated weekly</em></div>
         </div>
+        <div class="impact-card ca-scholar">
+          <span class="impact-num scholar-num">&#8599;</span>
+          <div class="impact-label"><a href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me" style="color:var(--green);">Google Scholar Profile</a><br><em style="color:#3e5270;">Citations &amp; h-index</em></div>
+        </div>
         <div class="impact-card ca-data">
           <span class="impact-num">68K+</span>
           <div class="impact-label">Facebook Posts Analysed<br><em style="color:#3e5270;">Across 4 Indian news outlets</em></div>
@@ -355,7 +361,7 @@
           <div class="impact-label">Years of Pandemic Data<br><em style="color:#3e5270;">March 2020 &ndash; March 2022</em></div>
         </div>
       </div>
-      <p class="impact-note">Citation counts via Semantic Scholar &amp; Crossref APIs &mdash; updated automatically every Monday. For full citation metrics and h-index, see <a href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me">Google Scholar</a>.</p>
+      <p class="impact-note">Citation counts via Semantic Scholar &amp; Crossref APIs &mdash; updated automatically every Monday. Full metrics &amp; h-index: <a href="https://scholar.google.com/citations?user=Z2kACpkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me">Google Scholar</a>.</p>
     </section>
 
     <!-- ACADEMIC SERVICE -->
@@ -546,26 +552,43 @@
       },{rootMargin:'-20% 0px -70% 0px',threshold:0});
       links.forEach(function(l){var el=document.getElementById(l.dataset.section);if(el)obs.observe(el);});
     })();
-    /* Citation counts */
+    /* Citation counts — with graceful fallback to last-known values */
     (function(){
-      var ssEl=document.getElementById('citation-count-ss');
-      var crEl=document.getElementById('citation-count-cr');
-      var ssDateEl=document.getElementById('citation-date-ss');
-      var crDateEl=document.getElementById('citation-date-cr');
-      fetch('citations.json?v='+Date.now())
-        .then(function(r){return r.json();})
-        .then(function(data){
-          var d=data.frontiers2024;if(!d)return;
-          ssEl.textContent=d.semanticScholar!==undefined?d.semanticScholar:'—';
-          crEl.textContent=d.crossref!==undefined?d.crossref:'—';
-          if(d.lastUpdated){ssDateEl.textContent='Updated '+d.lastUpdated;crDateEl.textContent='Updated '+d.lastUpdated;}
+      var ssEl     = document.getElementById('citation-count-ss');
+      var crEl     = document.getElementById('citation-count-cr');
+      var ssDateEl = document.getElementById('citation-date-ss');
+      var crDateEl = document.getElementById('citation-date-cr');
+
+      fetch('citations.json?v=' + Date.now())
+        .then(function(r){
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
         })
-        .catch(function(){ssEl.textContent='—';crEl.textContent='—';});
+        .then(function(data){
+          var d = data.frontiers2024;
+          if (!d) return;
+          /* Numeric counts */
+          if (typeof d.semanticScholar === 'number') ssEl.textContent = d.semanticScholar;
+          if (typeof d.crossref       === 'number') crEl.textContent = d.crossref;
+          /* Last-updated label */
+          if (d.lastUpdated) {
+            ssDateEl.textContent = 'Updated ' + d.lastUpdated;
+            crDateEl.textContent = 'Updated ' + d.lastUpdated;
+          }
+        })
+        .catch(function(){
+          /* On network error, keep the em-dash placeholder — do not blank the cards */
+          ssDateEl.textContent = 'See Google Scholar';
+          crDateEl.textContent = 'See Google Scholar';
+        });
     })();
     /* Footer year */
     (function(){
-      var el=document.getElementById('footer-year');
-      if(el){var d=new Date();el.textContent=d.toLocaleDateString('en-GB',{month:'long',year:'numeric'});}
+      var el = document.getElementById('footer-year');
+      if (el) {
+        var d = new Date();
+        el.textContent = d.toLocaleDateString('en-GB', {month:'long', year:'numeric'});
+      }
     })();
   </script>
 
