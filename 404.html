@@ -1,57 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Not Found — Sawood Anwar, PhD</title>
-  <meta name="robots" content="noindex">
+  <title>Page Not Found &mdash; Sawood Anwar, PhD</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#c9a96e">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <style>
-    :root{
-      --bg:#0e1525;--surface:#16212f;--border:#243148;--text:#d8e0f0;
-      --muted:#8796b4;--heading:#eef2ff;--accent:#c9a96e;--accent2:#7eafd4;
+    :root, [data-theme="dark"] {
+      --bg: #0e1525; --surface: #16212f; --border: #243148;
+      --text: #d8e0f0; --muted: #8796b4; --heading: #eef2ff;
+      --accent: #c9a96e; --accent2: #7eafd4;
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html,body{height:100%;}
-    body{
-      font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);
-      background-image:radial-gradient(ellipse 80% 50% at 10% 0%,rgba(201,169,110,.09) 0%,transparent 55%),
-                       radial-gradient(ellipse 65% 45% at 85% 100%,rgba(80,110,190,.11) 0%,transparent 60%);
-      display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;
+    [data-theme="light"] {
+      --bg: #f5f3ee; --surface: #ffffff; --border: #d6cfc0;
+      --text: #2c2c2c; --muted: #6b6459; --heading: #1a1610;
+      --accent: #8a6425; --accent2: #2e6fa8;
     }
-    .card{
-      background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);
-      border-radius:8px;padding:52px 56px;max-width:520px;width:100%;text-align:center;
-      box-shadow:0 12px 50px rgba(0,0,0,.36);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px;
+      transition: background .3s, color .3s;
     }
-    .code{
-      font-family:'EB Garamond',Georgia,serif;font-size:5rem;font-weight:600;
-      color:var(--accent);line-height:1;display:block;margin-bottom:8px;
-      text-shadow:0 0 32px rgba(201,169,110,.22);
+    .ornament {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 7rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+      opacity: .18;
+      letter-spacing: .06em;
+      margin-bottom: -16px;
     }
-    h1{font-family:'EB Garamond',Georgia,serif;font-size:1.7rem;font-weight:500;color:var(--heading);margin-bottom:16px;}
-    p{color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:28px;}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;padding:10px 24px;
-      border-radius:4px;background:var(--accent);border:none;color:#1a1000;
-      font-size:.88rem;font-weight:700;text-decoration:none;
-      transition:background .2s,transform .15s,box-shadow .2s;
-      box-shadow:0 3px 16px rgba(201,169,110,.28);
+    h1 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 12px;
     }
-    .btn:hover{background:#e8d4a8;transform:translateY(-1px);box-shadow:0 6px 22px rgba(201,169,110,.42);}
-    .ornament{font-size:1rem;color:rgba(201,169,110,.3);letter-spacing:.5em;display:block;margin-top:32px;}
+    p {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 22px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #1a1000;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+    }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .rule {
+      width: 48px; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 18px auto 22px;
+      border: none;
+    }
+    /* Theme toggle */
+    #theme-toggle {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--surface); border: 1px solid rgba(201,169,110,.35);
+      color: var(--accent); font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 3px 14px rgba(0,0,0,.22);
+    }
+    #theme-toggle:hover { transform: translateY(-2px); }
   </style>
 </head>
 <body>
-  <div class="card">
-    <span class="code">404</span>
-    <h1>Page Not Found</h1>
-    <p>The page you were looking for doesn’t exist or may have been moved. You can return to the main profile below.</p>
-    <a class="btn" href="/">← Back to Profile</a>
-    <span class="ornament" aria-hidden="true">&#8258;</span>
-  </div>
+  <button id="theme-toggle" aria-label="Toggle colour theme">&#9788;</button>
+  <div class="ornament" aria-hidden="true">404</div>
+  <h1>Page Not Found</h1>
+  <hr class="rule">
+  <p>The page you&rsquo;re looking for doesn&rsquo;t exist or may have been moved. Head back to the profile to find what you need.</p>
+  <a class="btn" href="/">&#8592; Back to Profile</a>
+  <script>
+    (function(){
+      var btn = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        btn.textContent = t === 'dark' ? '\u2600' : '\u263D';
+        btn.title = t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+        localStorage.setItem('theme', t);
+      }
+      applyTheme(localStorage.getItem('theme') || 'dark');
+      btn.addEventListener('click', function(){
+        applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
 </body>
 </html>
