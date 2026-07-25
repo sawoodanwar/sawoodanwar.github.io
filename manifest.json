@@ -1,0 +1,22 @@
+{
+  "name": "Sawood Anwar, PhD",
+  "short_name": "Sawood Anwar",
+  "description": "Academic profile of Sawood Anwar — Computational Social Scientist, University of Urbino Carlo Bo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1525",
+  "theme_color": "#c9a96e",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "https://github.com/sawoodanwar.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://github.com/sawoodanwar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
