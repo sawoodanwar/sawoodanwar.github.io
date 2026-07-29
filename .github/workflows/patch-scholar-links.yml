@@ -1,0 +1,41 @@
+name: Patch Scholar anchor tags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-scholar-links.yml'
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Restore full index.html from last known good commit
+        run: |
+          git fetch --depth=50
+          # The good commit before any Scholar breakage — restore it cleanly
+          git show 0cf7caaea9d613a4e6c78788da4d38b936ccdda8:index.html > index.html
+
+      - name: Verify file size (must be > 60KB)
+        run: |
+          SIZE=$(wc -c < index.html)
+          echo "File size: $SIZE bytes"
+          if [ "$SIZE" -lt 60000 ]; then
+            echo "ERROR: File too small, restore failed"
+            exit 1
+          fi
+
+      - name: Commit and push restored index.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet && echo "No changes needed" && exit 0
+          git commit -m "fix: restore complete index.html from good commit (Scholar tag repair)"
+          git push
